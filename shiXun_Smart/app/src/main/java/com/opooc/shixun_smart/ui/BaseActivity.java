@@ -14,14 +14,17 @@ import android.view.MenuItem;
  */
 
 
+
 /*
 * 同一属性、接口、*/
 public class BaseActivity extends AppCompatActivity {
-    protected void  oncreate( Bundle savaedInstanceState){
-        super.onCreate(savaedInstanceState);
-     // 显示返回键
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
+    protected void  onCreate( Bundle savaedInstanceState){
+        super.onCreate(savaedInstanceState);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     //菜单栏操作
     @Override
@@ -33,4 +36,5 @@ public class BaseActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

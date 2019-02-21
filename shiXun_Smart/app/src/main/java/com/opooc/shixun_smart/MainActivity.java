@@ -1,21 +1,25 @@
 package com.opooc.shixun_smart;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.opooc.shixun_smart.fragment.ButlerFragement;
 import com.opooc.shixun_smart.fragment.GirlFragement;
 import com.opooc.shixun_smart.fragment.UserFragement;
 import com.opooc.shixun_smart.fragment.WeChatFragement;
+import com.opooc.shixun_smart.ui.SettingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //tabLayout
     private TabLayout mTabLayout;
     //viewPage
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Fragment> mFragment;
     //title
     private List<String> mTitle;
+    //悬浮
+    private FloatingActionButton fab_setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         initData();
         initView();
     }
+
+
+
+
+
+
 
     private void initData() {
         mTitle = new ArrayList<>();
@@ -53,7 +65,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
+
+
     private void initView() {
+
+        fab_setting = (FloatingActionButton) findViewById(R.id.fab_setting);
+        fab_setting.setOnClickListener(this);
+
+
+
+
         mTabLayout = (TabLayout) findViewById(R.id.mTabLayout);
         mViewPager = (ViewPager) findViewById(R.id.mViewPager);
 
@@ -81,4 +106,12 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.fab_setting:
+                startActivity(new Intent(this, SettingActivity.class));
+                break;
+        }
+    }
 }
