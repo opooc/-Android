@@ -1,5 +1,9 @@
 package com.opooc.shixun_smart.utils;
 
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.TextView;
+
 /*
  *  Project_name:shiXun_Smart
  *  Package_name:com.opooc.shixun_smart.utils
@@ -10,4 +14,10 @@ package com.opooc.shixun_smart.utils;
  *
  */
 public class UtilsTools {
+    public static void setFont(Context mContext, TextView textview){
+        //设置字体
+        Typeface fontType =  Typeface.createFromAsset(mContext.getAssets(),"fonts/FONT.TTF");
+
+        textview.setTypeface(fontType);
+    }
 }
