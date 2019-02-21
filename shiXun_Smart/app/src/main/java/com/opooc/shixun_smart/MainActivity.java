@@ -15,7 +15,6 @@ import com.opooc.shixun_smart.fragment.GirlFragement;
 import com.opooc.shixun_smart.fragment.UserFragement;
 import com.opooc.shixun_smart.fragment.WeChatFragement;
 import com.opooc.shixun_smart.ui.SettingActivity;
-import com.opooc.shixun_smart.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initData();
         initView();
 
-        L.d("text");
+      
     }
 
 
