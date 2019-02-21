@@ -15,6 +15,7 @@ import com.opooc.shixun_smart.fragment.GirlFragement;
 import com.opooc.shixun_smart.fragment.UserFragement;
 import com.opooc.shixun_smart.fragment.WeChatFragement;
 import com.opooc.shixun_smart.ui.SettingActivity;
+import com.opooc.shixun_smart.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initData();
         initView();
+
+        L.d("text");
     }
 
 
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab_setting.setOnClickListener(this);
 
 
+        //默认隐藏
+        fab_setting.setVisibility(View.INVISIBLE);
 
 
         mTabLayout = (TabLayout) findViewById(R.id.mTabLayout);
@@ -84,6 +89,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //预加载
         mViewPager.setOffscreenPageLimit(mFragment.size());
+
+
+
+        //mViewPager
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if(position == 0){
+                    fab_setting.setVisibility(View.INVISIBLE);
+                }else {
+                    fab_setting.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+
+
+
+
         //设置适配器
         mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
