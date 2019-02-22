@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.opooc.shixun_smart.MainActivity;
 import com.opooc.shixun_smart.R;
 import com.opooc.shixun_smart.utils.ShareUtils;
 import com.opooc.shixun_smart.utils.StaticClass;
@@ -35,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
                     if (isFirst()){
                         startActivity(new Intent(SplashActivity.this,GuideActivity.class));
                     }else {
-                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        startActivity(new Intent(SplashActivity.this, GuideActivity.class));
                     }
                     finish();
                     break;
