@@ -12,6 +12,8 @@ package com.opooc.shixun_smart.utils;
 public class StaticClass {
     //闪屏页延时
     public  static  final  int HANDLER_SPLASH = 1001;
-
+    //是否第一次运行
     public static final String SHARE_IS_FIRST = "isFirst";
+    //Bugly key
+    public  static final  String BUGLY_APPID = "1e55436183";
 }

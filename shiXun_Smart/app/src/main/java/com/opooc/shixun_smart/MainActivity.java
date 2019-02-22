@@ -15,6 +15,7 @@ import com.opooc.shixun_smart.fragment.GirlFragement;
 import com.opooc.shixun_smart.fragment.UserFragement;
 import com.opooc.shixun_smart.fragment.WeChatFragement;
 import com.opooc.shixun_smart.ui.SettingActivity;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,15 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initData();
         initView();
-
-
+        CrashReport.testJavaCrash();
     }
-
-
-
-
-
-
 
     private void initData() {
         mTitle = new ArrayList<>();
@@ -111,6 +105,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onPageScrollStateChanged(int state) {
 
             }
+
+
+
+
         });
 
 

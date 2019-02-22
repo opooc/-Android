@@ -8,12 +8,13 @@ import android.app.Application;
  *  Name:        BaseApplication
  *  User:        opooc
  *  Creat_name:  2019/2/21 2:55 PM
- *  note:        TODO
+ *  note:        BaseApplication
  */
 public class BaseApplication extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
+       // CrashReport.initCrashReport(getApplicationContext(), "1e55436183", true);
     }
 }
